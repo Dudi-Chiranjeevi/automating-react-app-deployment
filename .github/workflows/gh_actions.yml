@@ -68,6 +68,7 @@ jobs:
              --image-id ami-00bb6a80f01f03502 \
              --count 1 \
              --instance-type t2.medium \
+             --key-name keypair \
              --security-group-ids $SECURITY_GROUP_ID \
              --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=crypto-app}]' \
              --query 'Instances[0].InstanceId' --output text)
