@@ -57,7 +57,7 @@ jobs:
      # Step 10: Check and create EC2 instance if not exists
       - name: Check and create EC2 instance if not exists
         run: |
-         INSTANCE_ID=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=todo-app" "Name=instance-state-name,Values=running" --query "Reservations[].Instances[].InstanceId" --output text)
+         INSTANCE_ID=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=crypto-app" "Name=instance-state-name,Values=running" --query "Reservations[].Instances[].InstanceId" --output text)
 
          if [ -z "$INSTANCE_ID" ]; then
            echo "EC2 instance not found, creating..."
